@@ -128,7 +128,7 @@ const specials = [
     tag: "Most loved",
     price: "₹420",
     desc: "Slow cooked, sealed with dough",
-    image: "/images/menu/chicken-biryani.jpg",
+    image: "/images/menu/webp/chicken-biryani.webp",
     emoji: "🍛",
   },
   {
@@ -136,7 +136,7 @@ const specials = [
     tag: "Chef special",
     price: "₹440",
     desc: "Tandoori chicken in tomato cream",
-    image: "/images/menu/butter-chicken.jpg",
+    image: "/images/menu/webp/butter-chicken.webp",
     emoji: "🍗",
   },
   {
@@ -144,7 +144,7 @@ const specials = [
     tag: "Veg favourite",
     price: "₹320",
     desc: "Charred cottage cheese, mint chutney",
-    image: "/images/menu/paneer-tikka.jpg",
+    image: "/images/menu/webp/paneer-tikka.webp",
     emoji: "🍢",
   },
   {
@@ -152,7 +152,7 @@ const specials = [
     tag: "Sweet ending",
     price: "₹140",
     desc: "Two pieces, warm sugar syrup",
-    image: "/images/menu/gulab-jamun.jpg",
+    image: "/images/menu/webp/gulab-jamun.webp",
     emoji: "🍮",
   },
 ];
