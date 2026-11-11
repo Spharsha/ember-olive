@@ -34,7 +34,7 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (result.success) {
-        setStatus("Your message has been sent successfully!");
+        setStatus("Thank you! Your message has been sent successfully.");
         form.reset();
       } else {
         console.error("Web3Forms Error:", result);
@@ -47,58 +47,69 @@ export default function ContactForm() {
     }
   }
 
+  const fieldClass =
+    "w-full rounded-xl border border-ink/15 bg-white px-4 py-3.5 text-base text-ink outline-none transition placeholder:text-ink/40 focus:border-chilli focus:ring-2 focus:ring-chilli/20";
+  const labelClass = "mb-2 block text-sm font-medium text-ink";
+
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto mt-12 max-w-2xl space-y-5 text-left"
+      className="mx-auto mt-10 max-w-2xl space-y-5 rounded-3xl bg-white/70 p-5 text-left shadow-sm sm:p-8"
     >
       <div>
-        <label className="mb-2 block text-xs tracking-widest">YOUR NAME</label>
+        <label htmlFor="name" className={labelClass}>
+          Your Name
+        </label>
         <input
+          id="name"
           type="text"
           name="name"
           required
+          autoComplete="name"
           placeholder="Enter your name"
-          className="w-full border border-[#102019]/20 bg-white px-5 py-4 text-sm outline-none focus:border-[#a17d42]"
+          className={fieldClass}
         />
       </div>
 
       <div>
-        <label className="mb-2 block text-xs tracking-widest">
-          EMAIL ADDRESS
+        <label htmlFor="email" className={labelClass}>
+          Email Address
         </label>
         <input
+          id="email"
           type="email"
           name="email"
           required
+          autoComplete="email"
           placeholder="Enter your email"
-          className="w-full border border-[#102019]/20 bg-white px-5 py-4 text-sm outline-none focus:border-[#a17d42]"
+          className={fieldClass}
         />
       </div>
 
       <div>
-        <label className="mb-2 block text-xs tracking-widest">
-          YOUR MESSAGE
+        <label htmlFor="message" className={labelClass}>
+          Your Message
         </label>
         <textarea
+          id="message"
           name="message"
           required
           rows={5}
-          placeholder="How can we help you?"
-          className="w-full resize-y border border-[#102019]/20 bg-white px-5 py-4 text-sm outline-none focus:border-[#a17d42]"
+          placeholder="Tell us the date, time and number of guests"
+          className={`${fieldClass} resize-y`}
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#102019] px-8 py-4 text-xs tracking-[0.2em] text-white transition hover:bg-[#c6a56b] hover:text-[#102019] disabled:opacity-50"
+        className="w-full rounded-full bg-chilli px-8 py-4 text-sm font-semibold tracking-wide text-white transition hover:bg-chilli-dark disabled:opacity-50"
       >
-        {loading ? "SENDING..." : "SEND MESSAGE"}
+        {loading ? "Sending..." : "Send Message"}
       </button>
 
       {status && (
-        <p role="status" className="text-center text-sm text-[#80602e]">
+        <p role="status" className="text-center text-sm text-chilli-dark">
           {status}
         </p>
       )}
